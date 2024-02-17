@@ -1,0 +1,337 @@
+.noNotesFoundImgWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.noNoteFoundImg {
+  width: 50%;
+  max-width: 600px;
+  object-fit: cover;
+}
+.noNoteFoundText {
+  font-size: 2rem;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-tertiary-500);
+  margin: 0;
+  text-align: center;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 20rem;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.77rem;
+  backdrop-filter: blur(100px);
+}
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.backBtn {
+  display: none;
+}
+.groupInitial {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem;
+  font-size: 1rem;
+  font-weight: 800;
+  border-radius: 50%;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+}
+.headerTextWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.groupName {
+  flex: 1;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.NotesHeadingCreatedAtText {
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: var(--color-tertiary-500);
+  margin: 0;
+  align-self: flex-start;
+}
+
+.headerIconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  margin-right: 0.2rem;
+}
+.editIconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  padding-inline: 0.9rem;
+  height: 100%;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.deleteIconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  padding-inline: 0.9rem;
+  height: 100%;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.editIconWrapper:hover {
+  background-color: var(--color-tertiary-600);
+}
+.deleteIconWrapper:hover {
+  background-color: var(--color-tertiary-600);
+}
+
+.main {
+  padding: 1rem;
+  padding-top: 5rem;
+  padding-bottom: 15rem;
+  overflow-y: auto;
+}
+.NoteGroupNotFoundImgWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100%;
+}
+.NoteGroupNotFoundImg {
+  width: 50%;
+  max-width: 600px;
+  object-fit: cover;
+}
+.NoteGroupNotFoundText {
+  font-size: 2rem;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-tertiary-500);
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
+.notes {
+  background-color: var(--color-tertiary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 20rem;
+  right: 0;
+  height: 200px;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  padding-bottom: 1.5rem;
+  backdrop-filter: blur(20px);
+}
+
+.noteInputWrapper {
+  display: flex;
+  gap: 1rem;
+  border-radius: 1rem;
+  padding: 1rem;
+  padding-inline: 1.3rem;
+  position: relative;
+  background-color: var(--color-tertiary-700);
+  transition: border-color 0.3s;
+  width: 100%;
+}
+textarea {
+  position: relative;
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--color-secondary);
+  border-radius: 0.5rem;
+  resize: none;
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+textarea::placeholder {
+  font-family: Inter;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  opacity: 0.1;
+}
+.addNoteBtn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  transition: border-color 0.3s;
+  cursor: pointer;
+  background-color: var(--color-tertiary-700);
+  color: var(--color-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  z-index: 1000;
+}
+
+.addNoteBtn:hover {
+  background-color: var(--color-tertiary-600);
+}
+.addNoteBtn.disabled {
+  background-color: var(--color-tertiary-700);
+  color: var(--color-tertiary-600);
+  cursor: not-allowed;
+}
+
+.navLink {
+  color: inherit;
+  text-decoration: underline;
+  transition: all 0.3s;
+}
+.navLink:hover {
+  color: var(--color-secondary);
+}
+
+.credit {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1rem;
+  padding-bottom: 0.35rem;
+  color: var(--color-tertiary-500);
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: 16px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 767px) {
+  .backBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    padding-block: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s;
+    cursor: pointer;
+    color: var(--color-secondary);
+    text-decoration: none;
+  }
+  .backBtn:hover {
+    color: var(--color-tertiary-500);
+  }
+  .header {
+    left: 0;
+  }
+  .footer {
+    left: 0;
+  }
+  .main {
+    padding-top: 5.1rem;
+    padding-bottom: 15rem;
+  }
+  .content {
+    padding: 0.5rem;
+    padding-inline: 1rem;
+  }
+  .addNoteBtn {
+    padding: 0.5rem 2rem;
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+  .credit {
+    padding: 0.5rem;
+    padding-bottom: 0.35rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main {
+    padding-top: 4.8rem;
+    padding-bottom: 15rem;
+  }
+  .heading {
+    gap: 0.5rem;
+  }
+  .groupName {
+    font-size: 1rem;
+  }
+  .createdAtText {
+    font-size: 0.7rem;
+  }
+  .headerIconWrapper {
+    gap: 0.5rem;
+  }
+  .editIconWrapper {
+    padding-inline: 0.5rem;
+    background-color: transparent;
+    font-size: 1rem;
+    transition: all 0.3s;
+  }
+  .deleteIconWrapper {
+    padding-inline: 0.5rem;
+    background-color: transparent;
+    font-size: 1rem;
+    transition: all 0.3s;
+  }
+  .editIconWrapper:hover {
+    opacity: 0.6;
+    background-color: transparent;
+  }
+  .deleteIconWrapper:hover {
+    opacity: 0.6;
+    background-color: transparent;
+  }
+
+  .backBtn {
+    font-size: 1.4rem;
+    padding: 0;
+  }
+  .groupInitial {
+    font-size: 0.8rem;
+    width: 30px;
+    height: 30px;
+  }
+}

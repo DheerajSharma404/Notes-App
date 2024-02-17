@@ -1,0 +1,23 @@
+.LayoutContainer {
+  display: flex;
+  width: 100%;
+}
+
+.outletWrapper {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 20rem);
+  margin-left: 20rem;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+@media screen and (max-width: 767px) {
+  .outletWrapper {
+    width: 100%;
+    margin-left: 0;
+  }
+  .sideBarWrapper {
+    display: none;
+  }
+}

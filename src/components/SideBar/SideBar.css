@@ -1,0 +1,145 @@
+.sidebar {
+  height: 100vh;
+  width: 20rem;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  overflow-y: auto;
+  margin: 0;
+  border-right: 0.5px solid var(--color-tertiary-light);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+  z-index: 1000;
+}
+.sidebarNotFoundImgWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sidebarNotFoundImg {
+  width: 80%;
+  max-width: 600px;
+  object-fit: cover;
+}
+.sidebarNotFoundText {
+  font-size: 2rem;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-tertiary-500);
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
+.sideBarNavLink {
+  color: inherit;
+  text-decoration: underline;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+.sideBarNavLink:hover {
+  color: var(--color-tertiary-400);
+}
+
+.sidebarNotesHeading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 17.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  padding-inline: 1.1rem;
+  padding-block: 0.4rem;
+  backdrop-filter: blur(20px);
+}
+.sidebarNotesHeading > h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--color-secondary);
+}
+.sidebarNotesGroupList {
+  padding: 1rem;
+  padding-bottom: 5.3rem;
+  padding-top: 5rem;
+  overflow-y: auto;
+}
+
+.sidebarGroup {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.5rem;
+  padding-block: 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  overflow: ellipsis;
+  text-decoration: none;
+
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.sidebarGroup:hover {
+  background-color: var(--color-tertiary-700);
+}
+
+.sidebarActiveGroup {
+  background-color: var(--color-tertiary-700);
+}
+
+.sidebarGroupInitial {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-secondary);
+  border-radius: 50%;
+
+  text-transform: uppercase;
+}
+.sidebarGroupName {
+  flex: 1;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.sidebarAddGroupWrapper {
+  position: fixed;
+  bottom: 0;
+  left: 224px;
+  padding: 1rem;
+  background-color: var(--color-tertiary-700);
+  border-radius: 100%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.sidebarAddGroupWrapper:hover {
+  background-color: var(--color-tertiary-600);
+}

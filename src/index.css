@@ -1,0 +1,110 @@
+:root {
+  --color-primary: #000;
+  --color-secondary: #ffffff;
+
+
+  --color-tertiary: #131313;
+  --color-tertiary-light: #1f1f1f;
+  --color-tertiary-700: #ffffff1c;
+  --color-tertiary-600: #ffffff2e;
+  --color-tertiary-500: rgba(83, 83, 83, 0.888);
+  --color-tertiary-400: rgb(150, 150, 150);
+  --color-tertiary-300: rgb(200, 200, 200);
+  --color-tertiary-200: #ffffffa1;
+
+  --color-modalOverlay: rgba(1, 1, 1, 0.579);
+
+  --color-accent-green: linear-gradient(
+    rgb(177, 233, 56) 0%,
+    rgb(97, 187, 0) 100%
+  );
+  --color-accent-red: linear-gradient(
+    rgb(255, 75, 75) 0%,
+    rgb(239, 31, 83) 100%
+  );
+  --color-accent-blue: linear-gradient(
+    rgb(74, 165, 255) 0%,
+    rgb(42, 93, 247) 100%
+  );
+  --color-accent-yellow: linear-gradient(
+    rgb(255, 221, 51) 0%,
+    rgb(232, 154, 0) 100%
+  );
+  --color-accent-orange: linear-gradient(
+    rgb(255, 154, 52) 0%,
+    rgb(223, 90, 23) 100%
+  );
+  --color-accent-pink: linear-gradient(
+    rgb(255, 163, 201) 0%,
+    rgb(239, 95, 179) 100%
+  );
+  --color-accent-purple: linear-gradient(
+    rgb(250, 157, 255) 0%,
+    rgb(194, 93, 222) 100%
+  );
+  --color-accent-gray: linear-gradient(
+    rgb(183, 183, 183) 0.13%,
+    rgb(111, 111, 111) 99.33%
+  );
+  --color-accent-cyan: linear-gradient(
+    rgb(36, 233, 193) 0%,
+    rgb(0, 151, 146) 100%
+  );
+
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(35, 35, 35) transparent;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 0px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(35, 35, 35);
+  border-radius: 20px;
+}
+
+html {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  background: var(--color-primary);
+  color: var(--color-secondary);
+}
+.noScroll {
+  overflow: hidden;
+}
