@@ -68,6 +68,8 @@
   font-size: 0.9rem;
   font-weight: 500;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: var(--color-tertiary-500);
   margin: 0;
   align-self: flex-start;
@@ -272,7 +274,7 @@ textarea::placeholder {
     padding-top: 5.1rem;
     padding-bottom: 15rem;
   }
-  .content {
+  .noteInputWrapper {
     padding: 0.5rem;
     padding-inline: 1rem;
   }
@@ -292,14 +294,15 @@ textarea::placeholder {
     padding-top: 4.8rem;
     padding-bottom: 15rem;
   }
+  
   .heading {
     gap: 0.5rem;
   }
   .groupName {
     font-size: 1rem;
   }
-  .createdAtText {
-    font-size: 0.7rem;
+  .NotesHeadingCreatedAtText {
+    font-size: 0.6rem;
   }
   .headerIconWrapper {
     gap: 0.5rem;
