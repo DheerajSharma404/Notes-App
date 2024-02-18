@@ -143,11 +143,11 @@ const NoteGroupContent = () => {
               <span style={{ fontSize: "1.5rem" }}>&rdquo;</span>
               <br />- Judith Exner
             </p>
-            <div className='mobileAddBtnWrapper'>
+           {isMobile && <div className='mobileAddBtnWrapper'>
               <button className='mobileAddBtn' onClick={toggleModal}>
                 Add Group
               </button>
-            </div>
+            </div>}
           </div>
           {actionType === "create" && isModalOpen && (
             <Modal
