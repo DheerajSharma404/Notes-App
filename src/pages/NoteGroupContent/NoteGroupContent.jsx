@@ -1,6 +1,6 @@
 import React from "react";
 import { FaPencil } from "react-icons/fa6";
-import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowBack, IoMdMore } from "react-icons/io";
 import { IoTrashBin } from "react-icons/io5";
 import { useMediaQuery } from "react-responsive";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
@@ -23,6 +23,7 @@ const NoteGroupContent = () => {
     React.useContext(ModalContext);
   const [isDisabled, setIsDisabled] = React.useState(true);
   const [note, setNote] = React.useState("");
+  const [isMoreOption, setIsMoreOption] = React.useState(false);
   const navigate = useNavigate();
 
   const { id } = useParams();
@@ -36,6 +37,9 @@ const NoteGroupContent = () => {
   const handleClick = () => {
     setActionType("edit");
     toggleModal();
+  };
+  const handleMoreOptionClick = () => {
+    setIsMoreOption(!isMoreOption);
   };
 
   React.useEffect(() => {
@@ -66,6 +70,23 @@ const NoteGroupContent = () => {
     // Write the updatedNoteGroups back to local storage
     localStorage.setItem("noteGroups", JSON.stringify(updatedNoteGroups));
     setNote("");
+  };
+
+  const handleNotesGroup = (name, color) => {
+    const newNoteGroup = {
+      id: uuidv4(),
+      groupName: name,
+      notes: [],
+      color,
+      createdAt: new Date(),
+    };
+    if (noteGroups.some((group) => group.groupName === name)) {
+      alert("Group name already exists");
+      return;
+    }
+    setNoteGroups([...noteGroups, newNoteGroup]);
+    toggleModal();
+    navigate(`/groups/${newNoteGroup.id}`);
   };
 
   const handleEdit = (newName, newColor) => {
@@ -103,25 +124,39 @@ const NoteGroupContent = () => {
   return (
     <div className='NoteGroupContentContainer'>
       {noteGroups?.length === 0 ? (
-        <div className='NoteGroupNotFoundImgWrapper'>
-          <img
-            src={NoteGroupNotFound}
-            alt='Note group not found'
-            className='NoteGroupNotFoundImg'
-          />
-          <p className='NoteGroupNotFoundText'>No group found</p>
-          {/* note taking qoutes */}
+        <>
+          <div className='NoteGroupNotFoundImgWrapper'>
+            <img
+              src={NoteGroupNotFound}
+              alt='Note group not found'
+              className='NoteGroupNotFoundImg'
+            />
+            <p className='NoteGroupNotFoundText'>No group found</p>
+            {/* note taking qoutes */}
 
-          <p
-            className='NoteGroupNotFoundText'
-            style={{ fontSize: "1rem", textAlign: "center" }}
-          >
-            <span style={{ fontSize: "1.5rem" }}>&ldquo;</span>
-            <em>When your heart speaks, take good notes.</em>
-            <span style={{ fontSize: "1.5rem" }}>&rdquo;</span>
-            <br />- Judith Exner
-          </p>
-        </div>
+            <p
+              className='NoteGroupNotFoundText'
+              style={{ fontSize: "1rem", textAlign: "center", whiteSpace: "pre" }}
+            >
+              <span style={{ fontSize: "1.5rem" }}>&ldquo;</span>
+              <em>When your heart speaks, take good notes.</em>
+              <span style={{ fontSize: "1.5rem" }}>&rdquo;</span>
+              <br />- Judith Exner
+            </p>
+            <div className='mobileAddBtnWrapper'>
+              <button className='mobileAddBtn' onClick={toggleModal}>
+                Add Group
+              </button>
+            </div>
+          </div>
+          {actionType === "create" && isModalOpen && (
+            <Modal
+              toggleModal={toggleModal}
+              actionType={actionType}
+              action={handleNotesGroup}
+            />
+          )}
+        </>
       ) : (
         <>
           <header className='header'>
@@ -149,22 +184,52 @@ const NoteGroupContent = () => {
                 )} `}</p>
               </div>
             </div>
-            <div className='headerIconWrapper'>
+            {isMobile ? (
               <div
-                className='editIconWrapper'
-                onClick={handleClick}
-                title='Edit Group'
+                className='mobileOptionIconWrapper'
+                onClick={handleMoreOptionClick}
               >
-                <FaPencil className='editIcon' />
+                <IoMdMore className='mobileOptionIcon' />
+
+                {isMoreOption && (
+                  <div className='moreOptionWraper'>
+                    <div
+                      className='mobileEditIconWrapper'
+                      onClick={handleClick}
+                      title='Edit Group'
+                    >
+                      <FaPencil className='editIcon' />
+                      <p>Edit</p>
+                    </div>
+                    <div
+                      className='mobileDeleteIconWrapper'
+                      onClick={handleDelete}
+                      title='Delete Group'
+                    >
+                      <IoTrashBin className='deleteIcon' />
+                      <p>Delete</p>
+                    </div>
+                  </div>
+                )}
               </div>
-              <div
-                className='deleteIconWrapper'
-                onClick={handleDelete}
-                title='Delete Group'
-              >
-                <IoTrashBin />
+            ) : (
+              <div className='headerIconWrapper'>
+                <div
+                  className='editIconWrapper'
+                  onClick={handleClick}
+                  title='Edit Group'
+                >
+                  <FaPencil className='editIcon' />
+                </div>
+                <div
+                  className='deleteIconWrapper'
+                  onClick={handleDelete}
+                  title='Delete Group'
+                >
+                  <IoTrashBin />
+                </div>
               </div>
-            </div>
+            )}
           </header>
           <main className='main'>
             {reverseNotes?.length === 0 ? (
