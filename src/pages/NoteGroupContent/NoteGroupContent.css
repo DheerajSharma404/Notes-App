@@ -309,7 +309,7 @@ textarea::placeholder {
     position: absolute;
     top: 3rem;
     right: 0;
-    background-color: var(--color-tertiary-700);
+    background-color: var(--color-tertiary-light);
     border-radius: 0.5rem;
     padding: 0.5rem;
     display: flex;
