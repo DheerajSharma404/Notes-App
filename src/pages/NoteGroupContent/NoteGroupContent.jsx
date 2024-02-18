@@ -136,20 +136,26 @@ const NoteGroupContent = () => {
 
             <p
               className='NoteGroupNotFoundText'
-              style={{ fontSize: "1rem", textAlign: "center", whiteSpace: "pre" }}
+              style={{
+                fontSize: "1rem",
+                textAlign: "center",
+                whiteSpace: "pre",
+              }}
             >
               <span style={{ fontSize: "1.5rem" }}>&ldquo;</span>
               <em>When your heart speaks, take good notes.</em>
               <span style={{ fontSize: "1.5rem" }}>&rdquo;</span>
               <br />- Judith Exner
             </p>
-           {isMobile && <div className='mobileAddBtnWrapper'>
-              <button className='mobileAddBtn' onClick={toggleModal}>
-                Add Group
-              </button>
-            </div>}
+            {isMobile && (
+              <div className='mobileAddBtnWrapper'>
+                <button className='mobileAddBtn' onClick={toggleModal}>
+                  Add Group
+                </button>
+              </div>
+            )}
           </div>
-          {actionType === "create" && isModalOpen && (
+          {isMobile && actionType === "create" && isModalOpen && (
             <Modal
               toggleModal={toggleModal}
               actionType={actionType}
