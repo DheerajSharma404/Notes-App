@@ -186,6 +186,7 @@ textarea {
   font-family: Inter;
   font-size: 1.5rem;
   font-weight: 500;
+  padding-bottom: 4rem;
 }
 textarea::placeholder {
   font-family: Inter;
@@ -198,16 +199,16 @@ textarea::placeholder {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  padding: 1rem 4rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 0.5rem;
+  border-radius: 0.8rem;
   outline: none;
   border: none;
-  transition: border-color 0.3s;
   cursor: pointer;
-  background-color: var(--color-tertiary-700);
+  background-color: var(--color-primary);
+  border: 0.5px solid var(--color-tertiary-600);
   color: var(--color-secondary);
   font-size: 1rem;
   font-weight: 600;
@@ -216,10 +217,13 @@ textarea::placeholder {
 }
 
 .addNoteBtn:hover {
-  background-color: var(--color-tertiary-600);
+  background-color: var(--color-tertiary-500);
+  border: 0.5px solid var(--color-tertiary-700);
+  color: var(--color-secondary);
 }
 .addNoteBtn.disabled {
-  background-color: var(--color-tertiary-700);
+  background-color: var(--color-tertiary-light);
+  border: 0.5px solid var(--color-tertiary-700);
   color: var(--color-tertiary-600);
   cursor: not-allowed;
 }
@@ -305,7 +309,7 @@ textarea::placeholder {
   }
 
   .moreOptionWraper {
-    border: 0.5px solid var(--color-tertiary-700);
+    border: 1px solid var(--color-tertiary-700);
     position: absolute;
     top: 3rem;
     right: 0;
@@ -314,7 +318,6 @@ textarea::placeholder {
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     z-index: 900;
     font-size: 1rem;
     color: var(--color-secondary);
@@ -358,9 +361,9 @@ textarea::placeholder {
     padding-inline: 1rem;
   }
   .addNoteBtn {
-    padding: 0.5rem 2rem;
-    bottom: 0.5rem;
-    right: 0.5rem;
+    padding: 0.8rem 1.4rem;
+    bottom: 0.8rem;
+    right: 0.8rem;
   }
   .credit {
     padding: 0.5rem;

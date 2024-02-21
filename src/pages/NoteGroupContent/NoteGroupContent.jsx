@@ -259,6 +259,8 @@ const NoteGroupContent = () => {
             <div className='noteInputWrapper'>
               <textarea
                 type='text'
+                name='note'
+                id='note'
                 placeholder='Create notes'
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
@@ -270,7 +272,7 @@ const NoteGroupContent = () => {
                 className={`addNoteBtn ${isDisabled ? "disabled" : ""}`}
                 onClick={handleNote}
               >
-                Add
+                Add Note
               </button>
             </div>
           </footer>

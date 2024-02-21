@@ -45,6 +45,7 @@ const Modal = ({ toggleModal, actionType, action }) => {
               title='Group Name'
               type='text'
               id='groupName'
+              name="groupName"
               value={name}
               placeholder='Group Name'
               onChange={handleNameChange}
