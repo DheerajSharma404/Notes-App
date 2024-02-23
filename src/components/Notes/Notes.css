@@ -9,10 +9,9 @@
 .noteTitle {
   font-size: 1.5rem;
   font-weight: 700;
-  line-height: 0.8;
   color: var(--color-tertiary-500);
-  text-overflow: ellipsis;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 .noteContent {
   font-size: 1.2rem;
